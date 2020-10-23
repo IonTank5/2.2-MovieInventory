@@ -1,3 +1,9 @@
+/*
+Jacob Choi
+Movie Inventory Lab
+10/23/2020
+Extra: Getting user input for the names of movies
+*/
 #include <iostream>
 #include <iomanip>
 #include "movieInfo.h"
@@ -21,11 +27,13 @@ void printAverage(movieInfo a, movieInfo b, movieInfo c, double d) {
     average /= double(a.getRent() + b.getRent() + c.getRent());
     cout << "The average was $" << std::fixed << std::showpoint << std::setprecision(2) << average << endl;
 }
+
 double printTotal(movieInfo a, movieInfo b, movieInfo c) {
     double total = a.getCost() * double(a.getRent()) + b.getCost() * double(b.getRent()) + c.getCost() * double(c.getRent());
     cout << "The total was $" << std::fixed << std::showpoint << std::setprecision(2) << total << endl;
     return total;
 }
+
 int main()
 {
     double tempCost;
@@ -42,27 +50,12 @@ int main()
     cin >> temp;
     movieInfo video3(temp);
     //Getting the cost and rent info for each video
-    cout << "How much is " << video1.getName() << "? ";
-    cin >> tempCost;
-    video1.setCost(tempCost);
-    cout << "How many are renting " << video1.getName() << "? ";
-    cin >> tempRent;
-    video1.setRent(tempRent);
-
-    cout << "How much is " << video2.getName() << "? ";
-    cin >> tempCost;
-    video2.setCost(tempCost);
-    cout << "How many are renting " << video2.getName() << "? ";
-    cin >> tempRent;
-    video2.setRent(tempRent);
-    
-    cout << "How much is " << video3.getName() << "? ";
-    cin >> tempCost;
-    video3.setCost(tempCost);
-    cout << "How many are renting " << video3.getName() << "? ";
-    cin >> tempRent;
-    video3.setRent(tempRent);
-    
+    video1.setCost(1);
+    video1.setRent(1);
+    video2.setCost(2);
+    video2.setRent(2);
+    video3.setCost(3);
+    video3.setRent(3);    
     //Printing out the info;
     printOut(video1, video2, video3);
     cout << endl << endl;

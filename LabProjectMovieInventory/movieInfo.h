@@ -8,7 +8,7 @@ public:
 	}
 	void setName(std::string x);
 	void setRent(int x);
-	void setCost(double x);
+	void setCost(int x);
 	std::string getName();
 	double getRent();
 	double getCost();
