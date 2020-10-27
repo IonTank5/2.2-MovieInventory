@@ -36,6 +36,7 @@ double printTotal(movieInfo a, movieInfo b, movieInfo c) {
 }
 
 int longestMovie(movieInfo a, movieInfo b, movieInfo c) {
+    //Getting the length of the longest movie title to fit the formatting later
     int length = 0, temp;
     if (a.getName().length() > b.getName().length()) {
         if (a.getName().length() > c.getName().length()) {
@@ -72,7 +73,7 @@ int main()
     std::getline(cin, temp);
     movieInfo video3(temp);
     //Getting the cost and rent info for each video
-    video1.setCost(1);
+    video1.setCost(1); //Calling object methods to set the cost and rent
     video1.setRent(1);
     video2.setCost(2);
     video2.setRent(2);
@@ -80,8 +81,10 @@ int main()
     video3.setRent(3);    
     //Printing out the info;
     int length = longestMovie(video1, video2, video3);
-    printOut(video1, video2, video3, length+5);
     cout << endl << endl;
+    printOut(video1, video2, video3, length+5); //Adding five spaces after the longest movie title and keeping the other names uniform with it
+    cout << endl << endl; //Two lines of spacing
+    //Gettign total and average and printing them out
     double total = printTotal(video1, video2, video3);
     printAverage(video1, video2, video3, total);
     return 0;
