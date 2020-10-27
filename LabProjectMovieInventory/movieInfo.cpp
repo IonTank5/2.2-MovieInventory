@@ -21,18 +21,19 @@ void movieInfo::setRent(int x) {
     while (true) {
         std::cout << "How many are renting " << name << " ";
         std::cin >> temp;
-        if (temp >= 0 && temp==floor(temp)) {
+        if (temp >= 0 && temp == floor(temp)) {
             break;
         }
-        else if (temp < 0 && temp!=floor(temp)) {
+        else if (temp < 0 && temp != floor(temp)) {
             std::cout << "Please enter non negative whole number " << std::endl;
         }
-        else if(!temp >= 0){
-            std::cout << "Please enter non negative number" << std::endl;
-        }
-        else {
+        else if (temp != floor(temp)) {
             std::cout << "Please enter whole number" << std::endl;
         }
+        else if (!temp >= 0) {
+            std::cout << "Please enter non negative number" << std::endl;
+        }
+        else;
     }
     rent = int(temp);
 }
